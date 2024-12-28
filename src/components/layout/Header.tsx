@@ -1,20 +1,15 @@
-import Link from "next/link";
+import Link from 'next/link';
+
+import Filip from '@/components/svg/filip.svg';
 
 export default function Header() {
   return (
-    <header className="bg-slate-800 text-white py-4">
+    <header className="bg-white text-slate-800 py-4">
       <nav className="container mx-auto px-4">
         <ul className="flex space-x-6">
-          <li>
-            <Link href="/" className="hover:text-slate-300">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/items" className="hover:text-slate-300">
-              Items
-            </Link>
-          </li>
+          <Link href="/" className="hover:text-slate-300">
+            <Filip />
+          </Link>
         </ul>
       </nav>
     </header>
