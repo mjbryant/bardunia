@@ -1,3 +1,4 @@
+import Overlay from '@/components/canvas/Overlay';
 import Link from 'next/link';
 
 interface Item {
@@ -48,20 +49,23 @@ const ITEMS: Item[] = [
 
 export default function Home() {
   return (
-    <div className="mx-auto text-center">
-      <h1 className="text-4xl font-bold mb-6">Bardunia</h1>
-      <div className="flex gap-6 p-12">
-        {ITEMS.map((item) => (
-          <Link
-            key={item.id}
-            className="w-64 h-64 bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:bg-slate-50 hover:cursor-pointer"
-            href={item.path}
-          >
-            <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
-            <p className="text-gray-600">{item.description}</p>
-          </Link>
-        ))}
+    <>
+      <Overlay hidden={true} />
+      <div className="mx-auto text-center">
+        <h1 className="text-4xl font-bold mb-6">Bardunia</h1>
+        <div className="flex gap-6 p-12">
+          {ITEMS.map((item) => (
+            <Link
+              key={item.id}
+              className="w-64 h-64 bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:bg-slate-50 hover:cursor-pointer"
+              href={item.path}
+            >
+              <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
+              <p className="text-gray-600">{item.description}</p>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
